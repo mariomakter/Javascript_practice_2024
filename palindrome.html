@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #FFE6E6;
+        }
+        .container{
+            background-color: #AD88C6;
+            width: 30%;
+            height: 200px;
+            padding: 100px;
+            margin: auto;
+            text-align: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+        .header{
+            display: inline-block;
+            position: relative;
+        }
+        .header:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+        }
+        .header:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+       }
+       input[type=text] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #68226e; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        }
+        .txt{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="header">Palindrome Checker</h2>
+
+    <form id ="palindromeForm">
+        <label for="inputString"><strong class="txt">Enter a String:</strong></label>
+        <input type="text" id="inputString" name="inputString">
+        <button type="submit">check</button>
+    </form>
+
+    <p id="result"></p>
+</div>
+<script>
+function isPalindrome(str){
+    const cleanStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+    const reversedStr = cleanStr.split('').reverse().join('');
+    return cleanStr === reversedStr;
+}
+document.getElementById('palindromeForm').addEventListener('submit', function(event){
+    event.preventDefault()
+
+    const inputString = document.getElementById('inputString').value;
+
+    const palindromeData = {
+        string: inputString,
+        isPalindrome:isPalindrome(inputString)
+    };
+
+    const resultElement = document.getElementById('result');
+    if(palindromeData.isPalindrome){
+        resultElement.textContent = `'${palindromeData.string}' is a Palindrome`;
+    }
+    else{
+        resultElement.textContent = `'${palindromeData.string}' is not palindrome `;
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+//Indexed ayyay
+
+// const cars = [
+//     'Saab', 'Vlovo', 'BMW',
+// ];
+
+// console.log(cars);
+
+//you can also create an array, and then provide the elements
+/*
+const cars = [];
+cars[0] = 'volvo';
+cars[1] = 'Saab';
+cars[2] = 'BMW';
+let car = cars;
+cars[0] = 'opel';
+cars.length;
+console.log(car);
+*/
+// console.log(car[0]);
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+// let length = fruits.length;
+// let sort = fruits.sort()
+// fruits.push('pineapple');          // add array elements  using the push()method
+// console.log(fruits);
+// associatove arrays
+/*
+const person = [];
+
+person['firstName'] = 'John';
+person['lastName'] = 'Doe';
+person['age'] = 26;
+person.length;
+console.log(person);
+console.log(person.length);
+*/
+
+function reverse_number(n){
+    n = n + "";
+
+    return n.split("").reverse().join("");
+}
+console.log(Number(reverse_number(32243)));

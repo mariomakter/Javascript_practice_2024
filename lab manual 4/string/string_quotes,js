@@ -1,0 +1,17 @@
+// let x = "JohnDoe";
+
+// let carName = " volvo XC60";
+// let carName1 = 'volvo xc60';
+
+// let person = "he is called johny ";
+
+// let length = person.length;
+
+// console.log(length);
+
+//splitting a string using the split() method is demonstrated below
+
+let text = "How are you doing today";
+// const mytext = text.split(" ");
+const mytext = text.substring(0,3);
+console.log(mytext);
